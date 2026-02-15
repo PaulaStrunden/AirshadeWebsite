@@ -1,0 +1,281 @@
+%!Adobe-FontList 1.25
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/AdobeFnt21.lst
+FileLength:7294
+FileModTime:790739614
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/AdobeFnt25.lst
+FileLength:7129
+FileModTime:791760216
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-Black
+FamilyName:Arial Black
+StyleName:Regular
+MenuName:Arial Black
+StyleBits:0
+WeightClass:900
+WidthClass:5
+AngleClass:0
+FullName:Arial Black
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/Arial Black.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:122556
+FileModTime:705590960
+NameArray:0,Mac,4,Arial Black
+NameArray:0,Win,1,Arial Black
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINNextLTPro-Black
+FamilyName:DIN Next LT Pro
+StyleName:Black
+MenuName:DIN Next LT Pro Black
+StyleBits:0
+WeightClass:900
+WidthClass:5
+AngleClass:0
+FullName:DINNextLTPro-Black
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-Black.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:100596
+FileModTime:572305734
+NameArray:0,Mac,4,DINNextLTPro-Black
+NameArray:0,Win,1,DIN Next LT Pro Black
+NameArray:0,Win,16,DIN Next LT Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINNextLTPro-Bold
+FamilyName:DIN Next LT Pro
+StyleName:Bold
+MenuName:DIN Next LT Pro
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:DIN Next LT Pro Bold
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:144528
+FileModTime:512376262
+NameArray:0,Mac,18,DIN Next LT Pro Bold
+NameArray:0,Mac,4,DIN Next LT Pro Bold
+NameArray:0,Win,1,DIN Next LT Pro
+NameArray:0,Win,16,DIN Next LT Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINNextLTPro-BoldCondensed
+FamilyName:DIN Next LT Pro
+StyleName:Bold Condensed
+MenuName:DIN Next LT Pro Condensed
+StyleBits:2
+WeightClass:700
+WidthClass:3
+AngleClass:0
+FullName:DINNextLTPro-BoldCondensed
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-BoldCondensed.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:105112
+FileModTime:572305724
+NameArray:0,Mac,4,DINNextLTPro-BoldCondensed
+NameArray:0,Win,1,DIN Next LT Pro Condensed
+NameArray:0,Win,16,DIN Next LT Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINNextLTPro-Condensed
+FamilyName:DIN Next LT Pro
+StyleName:Condensed
+MenuName:DIN Next LT Pro Condensed
+StyleBits:0
+WeightClass:400
+WidthClass:3
+AngleClass:0
+FullName:DINNextLTPro-Condensed
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-Condensed.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:136588
+FileModTime:572305726
+NameArray:0,Mac,4,DINNextLTPro-Condensed
+NameArray:0,Win,1,DIN Next LT Pro Condensed
+NameArray:0,Win,16,DIN Next LT Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINNextLTPro-HeavyCondensed
+FamilyName:DIN Next LT Pro
+StyleName:Heavy Condensed
+MenuName:DIN Next LT Pro Medium Cond
+StyleBits:2
+WeightClass:750
+WidthClass:3
+AngleClass:0
+FullName:DINNextLTPro-HeavyCondensed
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-HeavyCondensed.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:105024
+FileModTime:572305730
+NameArray:0,Mac,4,DINNextLTPro-HeavyCondensed
+NameArray:0,Win,1,DIN Next LT Pro Medium Cond
+NameArray:0,Win,16,DIN Next LT Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINNextLTPro-LightCondensed
+FamilyName:DIN Next LT Pro
+StyleName:Light Condensed
+MenuName:DIN Next LT Pro Light Condensed
+StyleBits:0
+WeightClass:300
+WidthClass:3
+AngleClass:0
+FullName:DINNextLTPro-LightCondensed
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-LightCondensed.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:137376
+FileModTime:572305732
+NameArray:0,Mac,4,DINNextLTPro-LightCondensed
+NameArray:0,Win,1,DIN Next LT Pro Light Condensed
+NameArray:0,Win,16,DIN Next LT Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINNextLTPro-MediumCond
+FamilyName:DIN Next LT Pro
+StyleName:Medium Condensed
+MenuName:DIN Next LT Pro Medium Cond
+StyleBits:0
+WeightClass:500
+WidthClass:3
+AngleClass:0
+FullName:DINNextLTPro-MediumCond
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-MediumCond.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:138728
+FileModTime:572305734
+NameArray:0,Mac,18,DIN Next LT Pro Medium Cond
+NameArray:0,Mac,4,DINNextLTPro-MediumCond
+NameArray:0,Win,1,DIN Next LT Pro Medium Cond
+NameArray:0,Win,16,DIN Next LT Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINNextLTPro-Regular
+FamilyName:DIN Next LT Pro
+StyleName:Regular
+MenuName:DIN Next LT Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:DINNextLTPro-Regular
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:137736
+FileModTime:572305722
+NameArray:0,Mac,4,DINNextLTPro-Regular
+NameArray:0,Win,1,DIN Next LT Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+MenuName:Minion Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Minion Pro
+WritingScript:Roman
+OutlineFileName:/Users/paulamayastrunden/Documents/00_NIKOLA/AIRSHADE_WEBSITE_2026/260115_Airshade_Technologies_Deck Folder/Document fonts/MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:684894236
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
