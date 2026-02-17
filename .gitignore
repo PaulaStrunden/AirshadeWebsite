@@ -1,24 +1,5 @@
 .DS_Store
-Thumbs.db
-
-# InDesign source files
+*.psd
 *.indd
 *.idml
-*.psd
-
-# Old variant files (not needed for deployment)
-variante_*.html
-
-# Original uncompressed videos (only _web.mp4 needed)
-VIDEOS/260212_CycleTesting.mp4
-VIDEOS/260212_FlyOver.mp4
-VIDEOS/260212_HU_Prototype.mp4
-VIDEOS/260212_HU_Protoype_together.mp4
-VIDEOS/260212_Inflation.mp4
-VIDEOS/260212_Markus_Front.mp4
-VIDEOS/260212_Touching_01.mp4
-VIDEOS/260212_Touching_02.mp4
-VIDEOS/260212_Touching_03.mp4
-
-# Fonts folder (not needed separately, used from Deck folder)
-FONTS/
+Thumbs.db

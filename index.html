@@ -4,32 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Airshade Technologies — Smart Shading Without Electricity</title>
-  <meta name="description" content="Airshade Technologies develops passive, sun-powered shading systems. No motors, sensors, or wiring. Zero-carbon building technology.">
+  <meta name="description" content="Autonomous solar façade shading powered by sunlight. Airshade delivers zero-carbon, maintenance-free climate control for architects, façade & engineering consultants, and sustainable real estate.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Airshade Technologies — Smart Shading Without Electricity">
+  <meta property="og:description" content="Autonomous solar façade shading powered by sunlight. No motors, no sensors, no power.">
+  <meta property="og:image" content="foto/airshade-mvrdv-sombra-federico-vespignani.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Airshade Technologies — Smart Shading Without Electricity">
+  <meta name="twitter:description" content="Autonomous solar façade shading powered by sunlight. No motors, no sensors, no power.">
+  <meta name="twitter:image" content="foto/airshade-mvrdv-sombra-federico-vespignani.jpg">
 
   <style>
     @font-face {
       font-family: 'DIN Next';
-      src: url('260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-Regular.ttf') format('truetype');
+      src: url('fonts/din-next-regular.ttf') format('truetype');
       font-weight: 400;
     }
     @font-face {
       font-family: 'DIN Next';
-      src: url('260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-Bold.ttf') format('truetype');
+      src: url('fonts/din-next-bold.ttf') format('truetype');
       font-weight: 700;
     }
     @font-face {
       font-family: 'DIN Next';
-      src: url('260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-Black.ttf') format('truetype');
+      src: url('fonts/din-next-black.ttf') format('truetype');
       font-weight: 900;
     }
     @font-face {
       font-family: 'DIN Next Condensed';
-      src: url('260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-Condensed.ttf') format('truetype');
+      src: url('fonts/din-next-condensed.ttf') format('truetype');
       font-weight: 400;
     }
     @font-face {
       font-family: 'DIN Next Condensed';
-      src: url('260115_Airshade_Technologies_Deck Folder/Document fonts/DINNextLTPro-BoldCondensed.ttf') format('truetype');
+      src: url('fonts/din-next-bold-condensed.ttf') format('truetype');
       font-weight: 700;
     }
 
@@ -101,20 +116,48 @@
       color: var(--yellow);
     }
 
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+      padding: 5px;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
     /* Awards Section - Deck Style */
     .awards-section {
-      margin-top: 40px;
-      padding-top: 30px;
+      margin-top: 25px;
+      padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
     .awards-section h3 {
-      font-size: 12px;
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--yellow);
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.5);
       margin-bottom: 25px;
-      font-weight: 700;
     }
 
     .awards-row-deck {
@@ -155,16 +198,35 @@
       margin-bottom: 4px;
     }
 
-    .awards-banner {
-      margin-top: 20px;
-      width: 100%;
+    .awards-logos-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 15px 20px;
+      margin-top: 15px;
+      align-items: start;
     }
 
-    .awards-banner img {
+    .award-logo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .award-logo-item img {
+      height: 60px;
       width: 100%;
-      height: auto;
       object-fit: contain;
-      opacity: 0.9;
+      filter: brightness(0) invert(1);
+    }
+
+    .award-logo-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     /* Featured In - Yellow Banner */
@@ -268,8 +330,37 @@
         transform: translateX(0);
       }
       100% {
-        transform: translateX(-50%);
+        transform: translateX(-25%);
       }
+    }
+
+    /* Trusted By */
+    .trusted-by-hero {
+      margin-top: 40px;
+    }
+
+    .trusted-by-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .trusted-by-logos {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      flex-wrap: wrap;
+    }
+
+    .trusted-by-logos img {
+      height: 20px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.5;
     }
 
     /* Sections - Full Screen with Snap */
@@ -374,7 +465,7 @@
     /* Hero Stats */
     .hero-stats {
       position: absolute;
-      bottom: 80px;
+      bottom: 30px;
       right: 80px;
       display: flex;
       gap: 40px;
@@ -446,7 +537,7 @@
     }
 
     .solution .section-bg {
-      background-image: url('FOTO/Markus_4.JPG');
+      background-image: url('foto/airshade-markus-4.jpg');
     }
 
     .solution-grid {
@@ -499,18 +590,21 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      line-height: 1;
+      padding-top: 3px;
+      text-align: center;
     }
 
     .step-content h3 {
       font-size: 22px;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 0;
       color: var(--white);
     }
 
     .step-content p {
       font-size: 20px;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.95);
       line-height: 1.7;
     }
 
@@ -521,11 +615,12 @@
     }
 
     .solution-tagline p {
-      font-family: 'DIN Next', sans-serif;
-      font-size: 22px;
+      font-family: 'DIN Next Condensed', sans-serif;
+      font-size: 30px;
       font-weight: 700;
       color: var(--yellow);
       line-height: 1.7;
+      letter-spacing: 1px;
     }
 
     /* Actuator Animation - Extra Large */
@@ -536,22 +631,39 @@
       min-height: 550px;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      padding-right: 20px;
+      justify-content: center;
     }
 
     .actuator-animation img {
       position: absolute;
-      max-width: 120%;
-      max-height: 120%;
+      height: 110%;
+      max-height: 700px;
       object-fit: contain;
+      object-position: center;
       opacity: 0;
-      transition: opacity 1.2s ease-in-out;
-      right: 0;
+      left: -20px;
     }
+
+    .actuator-animation img:nth-child(1) { z-index: 1; }
+    .actuator-animation img:nth-child(2) { z-index: 2; }
+    .actuator-animation img:nth-child(3) { z-index: 3; }
 
     .actuator-animation img.visible {
       opacity: 1;
+    }
+
+    /* Mobile-only benefit videos (hidden on desktop) */
+    .benefit-video-mobile {
+      display: none;
+    }
+
+    .benefit-video-mobile-wrapper {
+      display: none;
+    }
+
+    /* Mobile-only actuator (hidden on desktop) */
+    .actuator-animation-mobile {
+      display: none;
     }
 
     /* Benefits Section - Smooth Accordion like Gravis */
@@ -563,27 +675,31 @@
     }
 
     .benefits .section-bg {
-      background-image: url('FOTO/Prototype for ZCBS Lab.jpg');
+      background-image: url('foto/airshade-prototype-zcbs-lab.jpg');
       background-position: center 30%;
     }
 
+    .benefits .section-bg::after {
+      background: rgba(0,0,0,0.76);
+    }
+
     .benefits .section-title {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .benefits-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
-      margin-top: 40px;
+      margin-top: 20px;
       align-items: stretch;
     }
 
     .benefits-accordion {
       max-width: 100%;
-      background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%);
-      border-radius: 12px;
-      padding: 10px 30px;
+      background: none;
+      border-radius: 0;
+      padding: 10px 0;
     }
 
     .benefit-item {
@@ -612,9 +728,8 @@
       font-family: 'DIN Next Condensed', sans-serif;
       font-size: 28px;
       font-weight: 700;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.85);
       transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
     }
 
     .benefit-item.active .benefit-header h3 {
@@ -675,11 +790,10 @@
     }
 
     .benefit-content p {
-      font-size: 18px;
+      font-size: 20px;
       color: rgba(255,255,255,0.85);
       line-height: 1.7;
       padding-left: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
     }
 
     /* Benefits Images with Crossfade */
@@ -687,8 +801,9 @@
       position: relative;
       overflow: hidden;
       border-radius: 12px;
-      margin-top: 0;
+      margin-top: 30px;
       max-width: 100%;
+      max-height: 540px;
       background: rgba(0,0,0,0.75);
     }
 
@@ -710,6 +825,46 @@
       opacity: 1;
     }
 
+
+    /* Video labels for split-view videos */
+    .video-label-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2;
+    }
+
+    .video-label-wrapper.active {
+      opacity: 1;
+    }
+
+    .video-label {
+      position: absolute;
+      bottom: 16px;
+      font-family: 'DIN Next Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.45);
+      padding: 5px 14px;
+      border-radius: 4px;
+    }
+
+    .video-label.left {
+      left: 16px;
+    }
+
+    .video-label.right {
+      right: 16px;
+    }
+
     /* Projects Section - Compact Layout */
     .projects {
       background: var(--dark);
@@ -719,7 +874,7 @@
     }
 
     .projects .section-bg {
-      background-image: url('FOTO/masdarcity_01.jpg');
+      background-image: url('foto/airshade-masdar-city.jpg');
     }
 
     .projects-content {
@@ -1032,10 +1187,9 @@
     /* Project Navigation Buttons (between projects) */
     .project-nav-btn {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 50px;
-      height: 80px;
+      bottom: 30px;
+      width: 44px;
+      height: 44px;
       background: transparent;
       border: none;
       cursor: pointer;
@@ -1065,7 +1219,7 @@
     }
 
     .project-nav-prev {
-      left: 25px;
+      right: 74px;
     }
 
     .project-nav-prev::before {
@@ -1073,7 +1227,7 @@
     }
 
     .project-nav-next {
-      right: 25px;
+      right: 30px;
     }
 
     .project-nav-next::before {
@@ -1109,6 +1263,33 @@
       opacity: 0.7;
     }
 
+    .project-press {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .project-press-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .project-press-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 2px;
+    }
+
+    .project-press-links a:hover {
+      color: var(--yellow);
+      border-color: var(--yellow);
+    }
+
     /* Combined Team & Partners Section */
     .partners-team {
       position: relative;
@@ -1117,7 +1298,7 @@
     }
 
     .partners-team .section-bg {
-      background-image: url('AI IMAGES/MarkusWinery_Znaor_01.png');
+      background-image: url('foto/airshade-markus-winery.png');
     }
 
     .partners-team .section-bg::after {
@@ -1126,18 +1307,43 @@
 
     .partners-team-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 100px;
-      margin-top: 60px;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .team-headers-row {
+      display: flex;
+      gap: 0;
+    }
+
+    .team-headers-row h3:first-child {
+      width: 520px;
     }
 
     .partners-column h3,
-    .team-column h3 {
+    .team-headers-row h3,
+    .team-section-left h3 {
       font-size: 14px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.5);
       margin-bottom: 40px;
+    }
+
+    .team-members-row {
+      display: flex;
+      gap: 40px;
+      justify-content: flex-start;
+    }
+
+    .team-members-row .team-member-compact {
+      flex: 0 0 auto;
+      width: 220px;
+    }
+
+    .mobile-team-label {
+      display: none;
     }
 
     .partner-logos {
@@ -1162,40 +1368,71 @@
     .team-list {
       display: flex;
       flex-direction: row;
-      gap: 50px;
+      flex-wrap: wrap;
+      gap: 35px;
       justify-content: flex-start;
     }
 
     .team-member-compact {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
+      text-align: left;
       gap: 12px;
     }
 
-    .team-member-compact img {
-      width: 90px;
-      height: 90px;
+    .team-photo-wrap {
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
+      overflow: hidden;
+      border: 0.5px solid var(--white);
+      flex-shrink: 0;
+    }
+
+    .team-photo-wrap img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      object-position: center 20%;
       filter: grayscale(100%);
-      border: 1px solid var(--yellow);
+    }
+
+    .team-photo-wrap img.joe-photo {
+      object-position: center 10%;
+      transform: scale(1.3);
     }
 
     .team-member-compact h4 {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 700;
       color: var(--white);
       margin-bottom: 2px;
     }
 
     .team-member-compact .role {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--yellow);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+    }
+
+    .team-bio {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+      margin-top: 8px;
+      max-width: 220px;
+    }
+
+    .team-photo-placeholder {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      flex-shrink: 0;
     }
 
     /* Contact Section */
@@ -1790,6 +2027,26 @@
         height: 100%;
       }
 
+      .footer-main {
+        gap: 40px;
+        padding: 40px;
+      }
+
+      .footer-bottom {
+        padding: 20px 40px;
+      }
+
+      .footer-awards {
+        padding: 20px 40px;
+      }
+
+      .cta .section-content {
+        padding: 100px 40px 40px;
+      }
+
+      .team-list {
+        gap: 30px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1798,32 +2055,231 @@
       }
 
       nav {
-        padding: 20px 25px;
+        padding: 15px 20px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%);
+        padding-bottom: 30px;
+      }
+
+      /* Hamburger visible on mobile */
+      .hamburger {
+        display: flex;
       }
 
       .nav-links {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10,10,10,0.97);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        z-index: 999;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 24px;
       }
 
       .section-content {
-        padding: 0 25px;
+        padding: 0 20px;
+      }
+
+      .hero {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 120px;
+        padding-bottom: 40px;
       }
 
       .hero-content {
-        padding: 0 25px;
+        padding: 0 20px;
+      }
+
+      .hero-tagline {
+        font-size: 14px;
+        letter-spacing: 0.2em;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
       }
 
       .hero-stats {
         position: static;
-        margin-top: 50px;
-        padding: 0 25px;
-        flex-wrap: wrap;
+        margin-top: 30px;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        z-index: 10;
+        width: 100%;
       }
 
-      .benefit-header h3 {
+      .hero-stat {
+        min-width: unset;
+        align-items: center;
+      }
+
+      .hero-stat-value {
+        font-size: 32px;
+      }
+
+      .hero-stat-label {
+        font-size: 11px;
+      }
+
+      .hero-stat-prefix {
+        font-size: 11px;
+      }
+
+      .trusted-by-hero {
+        margin-top: 25px;
+      }
+
+      .trusted-by-logos {
+        gap: 20px;
+      }
+
+      .trusted-by-logos img {
+        height: 14px;
+      }
+
+      .section-label {
+        font-size: 13px;
+        letter-spacing: 0.2em;
+      }
+
+      .section-title {
+        font-size: clamp(28px, 8vw, 48px);
+      }
+
+      /* Sections need more bottom breathing room on mobile */
+      .section {
+        min-height: auto;
+        padding-bottom: 80px;
+      }
+
+      .hero {
+        min-height: 100vh;
+        padding-bottom: 40px;
+      }
+
+      /* Solution section */
+      .solution {
+        padding-top: 100px;
+      }
+
+      .solution-intro {
+        font-size: 16px;
+      }
+
+      .step-number {
+        width: 45px;
+        height: 45px;
         font-size: 22px;
       }
 
+      .step-content h3 {
+        font-size: 18px;
+      }
+
+      .step-content p {
+        font-size: 16px;
+      }
+
+      .solution-tagline p {
+        font-size: 18px;
+      }
+
+      .benefits {
+        padding-top: 80px;
+      }
+
+      .projects {
+        padding-top: 80px;
+      }
+
+      /* Benefits */
+      .benefit-header h3 {
+        font-size: 20px;
+      }
+
+      .benefit-content p {
+        font-size: 15px;
+      }
+
+      .benefit-item.active .benefit-content {
+        max-height: 500px;
+      }
+
+      .benefits-accordion {
+        padding: 10px 20px 30px;
+      }
+
+      /* Hide desktop video panel, show inline mobile videos */
+      .benefits-images {
+        display: none;
+      }
+
+      .benefit-video-mobile {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 15px;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
+
+      .benefit-video-mobile-wrapper {
+        display: block;
+        position: relative;
+        margin-top: 15px;
+      }
+
+      .benefit-video-mobile-wrapper .benefit-video-mobile {
+        margin-top: 0;
+      }
+
+      /* Show mobile actuator between intro text and steps */
+      .actuator-animation-mobile {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 280px;
+        margin: 20px 0;
+      }
+
+      .actuator-animation-mobile img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+      }
+
+      .actuator-animation-mobile img:nth-child(1) { z-index: 1; }
+      .actuator-animation-mobile img:nth-child(2) { z-index: 2; }
+      .actuator-animation-mobile img:nth-child(3) { z-index: 3; }
+
+      .actuator-animation-mobile img.visible {
+        opacity: 1;
+      }
+
+      /* Hide the original actuator animation on mobile */
+      .actuator-animation {
+        display: none;
+      }
+
+      /* Projects */
       .project-showcase {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -1831,43 +2287,156 @@
 
       .project-card {
         aspect-ratio: 4/3;
-        min-height: 300px;
+        min-height: 250px;
       }
 
-      .benefits-images {
-        aspect-ratio: 4/3;
-        max-width: 100%;
+      .project-info {
+        padding: 20px;
       }
 
-      .actuator-animation {
-        min-height: 300px;
+      .project-info h3 {
+        font-size: 18px;
       }
 
-      .footer-inner {
+      /* Project Lightbox mobile */
+      .project-lightbox-content {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        padding-top: 60px;
+        gap: 20px;
+        overflow-y: auto;
+        max-height: 100vh;
+        align-items: start;
+      }
+
+      .project-lightbox-info {
+        order: -1;
+      }
+
+      .project-lightbox-info h2 {
+        font-size: 24px;
+      }
+
+      .project-lightbox-info p {
+        font-size: 14px;
+      }
+
+      .project-lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 44px;
+        height: 44px;
+        opacity: 1;
+        z-index: 10;
+      }
+
+      .project-lightbox-close::before,
+      .project-lightbox-close::after {
+        background: var(--white);
+      }
+
+      .project-nav-btn {
+        display: none;
+      }
+
+      .project-partners-logos img {
+        height: 18px;
+      }
+
+      /* Team & Partners */
+      .partners-team {
+        padding-top: 80px;
+      }
+
+      .partners-team-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .team-headers-row {
+        display: none;
+      }
+
+      .team-members-row {
+        display: flex;
         flex-direction: column;
         gap: 20px;
-        padding: 20px 25px;
+      }
+
+      .team-members-row .team-member-compact {
+        width: auto;
+      }
+
+      .team-members-row .mobile-team-label {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.5);
+        margin-top: 10px;
+      }
+
+      .team-members-row .mobile-team-label:first-child {
+        margin-top: 0;
+      }
+
+      .team-member-compact {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .team-photo-wrap {
+        width: 90px;
+        height: 90px;
+      }
+
+      .partner-logos {
+        gap: 20px 30px;
+      }
+
+      .partner-logos img {
+        height: 25px;
+      }
+
+      .awards-logos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 15px;
+        justify-items: start;
+      }
+
+      .award-logo-item {
         align-items: flex-start;
       }
 
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
+      .award-logo-item img {
+        height: 35px;
+      }
+
+      .award-logo-label {
+        display: none;
+      }
+
+      /* Contact */
+      .cta {
+        padding-bottom: 0;
+      }
+
+      .cta .section-content {
+        padding: 80px 20px 30px;
+      }
+
+      .cta .section-title {
+        white-space: normal;
+        font-size: clamp(28px, 7vw, 48px);
       }
 
       .contact-layout-new {
         grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .contact-visit-content {
-        flex-direction: row;
-        gap: 15px;
-      }
-
-      .contact-map-square iframe {
-        width: 120px;
-        height: 120px;
+        gap: 40px;
+        margin-top: 30px;
       }
 
       .contact-form-grid {
@@ -1878,8 +2447,81 @@
         min-height: 150px;
       }
 
-      .cta .section-title {
-        white-space: normal;
+      .contact-visit-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-map-square {
+        width: 100%;
+      }
+
+      .contact-map-square iframe {
+        width: 100%;
+        height: 200px;
+      }
+
+      .contact-address-info p {
+        font-size: 14px;
+      }
+
+      /* Footer */
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 20px;
+      }
+
+      .footer-right-columns {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .footer-brand p {
+        font-size: 12px;
+      }
+
+      .contact-buttons {
+        gap: 15px;
+      }
+
+      .btn-large {
+        width: 60px;
+        height: 60px;
+      }
+
+      .btn-large svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .footer-awards {
+        padding: 15px 20px;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      .footer-legal {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* Featured In yellow banner */
+      .featured-label-yellow {
+        padding: 12px 20px;
+        font-size: 10px;
+      }
+
+      .press-item-yellow {
+        font-size: 10px;
       }
     }
   </style>
@@ -1888,10 +2530,15 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="#contact" class="logo">
-      <img src="LOGOS/260123_Airshade_logo_white_short.svg" alt="Airshade">
+    <a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+      <img src="logos/airshade-logo-white.svg" alt="Airshade">
     </a>
-    <ul class="nav-links">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#solution">Technology</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#team">Team</a></li>
@@ -1902,12 +2549,21 @@
   <!-- Hero Section with Stats -->
   <section class="section hero">
     <video class="hero-video" autoplay muted loop playsinline>
-      <source src="REEL/Airshade Landing.mp4" type="video/mp4">
+      <source src="reel/260217_landing_1080_compressed_v1.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tagline">Patented Technology</p>
       <h1>Smart Shading<br><em>Without Electricity</em></h1>
+      <div class="trusted-by-hero">
+        <span class="trusted-by-label">Trusted by</span>
+        <div class="trusted-by-logos">
+          <img src="logos/WHITE/Arup_Logo_White_RGB_Centred.png" alt="ARUP">
+          <img src="logos/WHITE/MVRDV_Logo-e1744202542594_white.png" alt="MVRDV" style="margin-left: 5px; height: 24px;">
+          <img src="logos/airshade-partner-materialdistrict.png" alt="Metadecor" style="margin-left: 5px;">
+          <img src="logos/WHITE/Masdar City Logo 2022_English.png" alt="Masdar City" style="height: 28px; margin-left: -35px;">
+        </div>
+      </div>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -1929,7 +2585,7 @@
       <div class="hero-stat">
         <div class="hero-stat-value">0</div>
         <div class="hero-stat-divider"></div>
-        <div class="hero-stat-label">Maintenance</div>
+        <div class="hero-stat-label">Electronics</div>
       </div>
     </div>
   </section>
@@ -1941,28 +2597,35 @@
       <div class="solution-grid">
         <div class="solution-text">
           <h2 class="section-title"><span style="color: var(--yellow);">Natural Intelligence</span><br><span style="white-space: nowrap;">Patented Physical Response</span></h2>
-          <p class="solution-intro">Airshade's patented actuator uses the sun's heat to expand trapped air — creating pressure that physically moves shading panels.</p>
+          <p class="solution-intro">Airshade's patented actuator uses the sun's heat to expand air — creating pressure that physically moves shading panels.</p>
+
+          <!-- Mobile-only actuator (between intro and steps) -->
+          <div class="actuator-animation-mobile">
+            <img src="technology/airshade-actuator-axo-01.png" alt="Actuator State 1" class="visible">
+            <img src="technology/airshade-actuator-axo-02.png" alt="Actuator State 2">
+            <img src="technology/airshade-actuator-axo-03.png" alt="Actuator State 3">
+          </div>
 
           <div class="how-it-works">
             <div class="step active">
               <div class="step-number">1</div>
               <div class="step-content">
                 <h3>Air Expands with Heat</h3>
-                <p>Sunlight heats sealed air chambers inside the actuator</p>
+                <p>Sunlight heats air chambers in shading units</p>
               </div>
             </div>
             <div class="step">
               <div class="step-number">2</div>
               <div class="step-content">
                 <h3>Pressure Rises</h3>
-                <p>Expanding air creates mechanical force</p>
+                <p>Expanding air inflates soft robotics actuator</p>
               </div>
             </div>
             <div class="step">
               <div class="step-number">3</div>
               <div class="step-content">
                 <h3>Shading Units Move</h3>
-                <p>Panels tilt to block direct sunlight</p>
+                <p>Mechanical motion moves shading</p>
               </div>
             </div>
           </div>
@@ -1974,9 +2637,9 @@
 
         <!-- Actuator Animation - Large -->
         <div class="actuator-animation">
-          <img src="TECHNOLOGY/ACTUATOR/actuator_axo_01.png" alt="Actuator State 1" class="visible">
-          <img src="TECHNOLOGY/ACTUATOR/actuator_axo_02.png" alt="Actuator State 2">
-          <img src="TECHNOLOGY/ACTUATOR/actuator_axo_03.png" alt="Actuator State 3">
+          <img src="technology/airshade-actuator-axo-01.png" alt="Actuator State 1" class="visible">
+          <img src="technology/airshade-actuator-axo-02.png" alt="Actuator State 2">
+          <img src="technology/airshade-actuator-axo-03.png" alt="Actuator State 3">
         </div>
       </div>
     </div>
@@ -1996,7 +2659,8 @@
               <div class="benefit-toggle"></div>
             </div>
             <div class="benefit-content">
-              <p>Powered entirely by the sun — no electricity, no cables, no ongoing energy costs. No motors or sensors means dramatically lower CapEx and near-zero OpEx over the entire building lifecycle.</p>
+              <p>Powered entirely by the sun — no electricity, no cables, no ongoing energy costs. No motors or sensors means dramatically lower initial costs and near-zero operating costs over the entire building lifecycle.</p>
+              <video class="benefit-video-mobile" src="videos/airshade-cycle-testing.mp4" muted loop playsinline autoplay></video>
             </div>
           </div>
 
@@ -2006,36 +2670,59 @@
               <div class="benefit-toggle"></div>
             </div>
             <div class="benefit-content">
-              <p>No wiring, no control systems, no infrastructure changes required. Airshade retrofits onto new and existing buildings alike — simply mount and it works from day one.</p>
+              <p>No wiring, no control systems, no infrastructure changes required. Airshade works for retrofits as well as new buildings.</p>
+              <video class="benefit-video-mobile" src="videos/airshade-plugandplay.mp4" muted loop playsinline></video>
             </div>
           </div>
 
           <div class="benefit-item" data-image="3">
             <div class="benefit-header">
-              <h3>Silent & Durable</h3>
+              <h3>Modular & Scalable</h3>
               <div class="benefit-toggle"></div>
             </div>
             <div class="benefit-content">
-              <p>No motors means no noise — perfect for residential and office environments. Mechanical simplicity ensures decades of quiet, reliable operation without component failure.</p>
+              <p>Individual units click together into any facade configuration — from a single window to an entire building skin. The modular system adapts to any geometry, scales effortlessly, and can be extended or reconfigured at any time.</p>
+              <div class="benefit-video-mobile-wrapper">
+                <video class="benefit-video-mobile" src="videos/airshade-modular-together.mp4" muted loop playsinline></video>
+                <span class="video-label left">Lab</span>
+                <span class="video-label right">Real Life</span>
+              </div>
             </div>
           </div>
 
           <div class="benefit-item" data-image="4">
             <div class="benefit-header">
+              <h3>Silent & Durable</h3>
+              <div class="benefit-toggle"></div>
+            </div>
+            <div class="benefit-content">
+              <p>No motors means no noise — perfect for office and study environments. Mechanical simplicity ensures long-lasting quiet, reliable operation without component failure.</p>
+              <video class="benefit-video-mobile" src="videos/airshade-inflation.mp4" muted loop playsinline style="transform: scale(2.2); object-fit: cover;"></video>
+            </div>
+          </div>
+
+          <div class="benefit-item" data-image="5">
+            <div class="benefit-header">
               <h3>Future-Proof</h3>
               <div class="benefit-toggle"></div>
             </div>
             <div class="benefit-content">
-              <p>Fully compliant with the EU Energy Performance of Buildings Directive (EPBD). While electronics fail after 15 years, Airshade's passive system outlasts the building facade itself.</p>
+              <p>Fully compliant with the EU Energy Performance of Buildings Directive (EPBD). While electronics and PV fails after a few years, Airshade's is designed to match façade lifecycles.</p>
+              <video class="benefit-video-mobile" src="videos/airshade-flyover.mp4" muted loop playsinline></video>
             </div>
           </div>
         </div>
 
         <div class="benefits-images">
-          <video src="VIDEOS/260212_CycleTesting_web.mp4" data-image="1" class="active" muted loop playsinline autoplay id="benefitVideo1"></video>
-          <video src="VIDEOS/260212_Touching_01_web.mp4" data-image="2" muted loop playsinline id="benefitVideo2"></video>
-          <video src="VIDEOS/260212_Inflation_web.mp4" data-image="3" muted loop playsinline id="benefitVideo3" style="transform: scale(1.8); object-fit: cover;"></video>
-          <video src="VIDEOS/260212_FlyOver_web.mp4" data-image="4" muted loop playsinline id="benefitVideo4"></video>
+          <video src="videos/airshade-cycle-testing.mp4" data-image="1" class="active" muted loop playsinline autoplay id="benefitVideo1"></video>
+          <video src="videos/airshade-plugandplay.mp4" data-image="2" muted loop playsinline id="benefitVideo2"></video>
+          <video src="videos/airshade-modular-together.mp4" data-image="3" muted loop playsinline id="benefitVideo3"></video>
+          <div class="video-label-wrapper" data-image="3">
+            <span class="video-label left">Lab</span>
+            <span class="video-label right">Real Life</span>
+          </div>
+          <video src="videos/airshade-inflation.mp4" data-image="4" muted loop playsinline id="benefitVideo4" style="transform: scale(2.2); object-fit: cover;"></video>
+          <video src="videos/airshade-flyover.mp4" data-image="5" muted loop playsinline id="benefitVideo5"></video>
         </div>
       </div>
     </div>
@@ -2050,7 +2737,7 @@
 
         <div class="project-showcase">
           <div class="project-card" data-project="markus">
-            <img src="FOTO/Markus_Airshade1.jpg" alt="Markus Wines">
+            <img src="foto/airshade-prototype-markus.jpg" alt="Markus Wines">
             <div class="view-more"></div>
             <div class="project-info">
               <span class="project-tag">Lighthouse Project</span>
@@ -2059,7 +2746,7 @@
             </div>
           </div>
           <div class="project-card" data-project="sombra">
-            <img src="FOTO/MVRDV SOMBRA 3 © Federico Vespignani_vb.jpg" alt="SOMBRA Pavilion">
+            <img src="foto/airshade-mvrdv-sombra-federico-vespignani.jpg" alt="SOMBRA Pavilion">
             <div class="view-more"></div>
             <div class="project-info">
               <span class="project-tag">2025 Pavilion of the Year</span>
@@ -2068,7 +2755,7 @@
             </div>
           </div>
           <div class="project-card" data-project="masdar">
-            <img src="FOTO/masdarcity_01.jpg" alt="Masdar City">
+            <img src="foto/airshade-masdar-city.jpg" alt="Masdar City">
             <div class="view-more"></div>
             <div class="project-info">
               <span class="project-tag">Extreme Climate</span>
@@ -2077,7 +2764,7 @@
             </div>
           </div>
           <div class="project-card" data-project="utrecht">
-            <img src="FOTO/DSC_0252.jpg" alt="Hogeschool Utrecht">
+            <img src="foto/HU facade.png" alt="Hogeschool Utrecht">
             <div class="view-more"></div>
             <div class="project-info">
               <span class="project-tag">EU Retrofit</span>
@@ -2102,6 +2789,7 @@
       <div class="project-lightbox-image-wrapper">
         <div class="project-lightbox-image">
           <img src="" alt="" id="lightboxImage">
+          <video src="" id="lightboxVideo" muted loop playsinline autoplay style="display:none; width:100%; height:100%; object-fit:cover; border-radius:8px;"></video>
         </div>
         <div class="lightbox-nav">
           <button class="lightbox-nav-btn prev" id="lightboxPrev"></button>
@@ -2118,6 +2806,10 @@
           <span class="project-partners-label">Partners</span>
           <div class="project-partners-logos" id="projectPartners"></div>
         </div>
+        <div class="project-press" id="projectPress" style="display: none;">
+          <span class="project-partners-label">Press</span>
+          <div class="project-press-links" id="projectPressLinks"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -2128,46 +2820,70 @@
     <div class="section-content">
       <h2 class="section-title">Team & Partners</h2>
 
-      <!-- Partners & Team Grid (Top) -->
+      <!-- Team & Partners Grid (Top) -->
       <div class="partners-team-grid">
-        <div class="partners-column">
-          <h3>Industry Partners</h3>
-          <div class="partner-logos">
-            <img src="LOGOS/PARTNER LOGOS/Arup_Logo_White_RGB_Centred.png" alt="ARUP">
-            <img src="LOGOS/WHITE/MD-Logo-DEF-zwart-1536x226_white.png" alt="metadecor">
+        <div class="team-section-left">
+          <div class="team-headers-row">
+            <h3>Core Team</h3>
+            <h3>Scientific Advisors</h3>
           </div>
-
-          <h3 style="margin-top: 30px;">Academic Partners</h3>
-          <div class="partner-logos">
-            <img src="LOGOS/WHITE/AMOLF-Institute-Logo_white.png" alt="AMOLF">
-            <img src="LOGOS/WHITE/TU_e_white.png" alt="TU Eindhoven">
+          <div class="team-members-row">
+            <p class="mobile-team-label">Core Team</p>
+            <div class="team-member-compact">
+              <div class="team-photo-wrap">
+                <img src="team/airshade-nikola-znaor-photo.jpg" alt="Nikola Znaor">
+              </div>
+              <div>
+                <h4><a href="https://www.linkedin.com/in/nikola-znaor/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Nikola Znaor</a></h4>
+                <p class="role">Founder & CEO</p>
+                <p class="team-bio">Licensed architect with 10+ years<br>in climate-adaptive facades</p>
+              </div>
+            </div>
+            <div class="team-member-compact">
+              <div class="team-photo-wrap">
+                <img src="team/airshade-joe-platt.jpg" alt="Joe Platt" class="joe-photo">
+              </div>
+              <div>
+                <h4><a href="https://www.linkedin.com/in/joe-platt-3a682523/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Joe Platt</a></h4>
+                <p class="role">Lead Engineer</p>
+                <p class="team-bio">ex-Head of Hardware at Aectual<br>ex-Lead Engineer at Royal3D</p>
+              </div>
+            </div>
+            <p class="mobile-team-label">Scientific Advisors</p>
+            <div class="team-member-compact">
+              <div class="team-photo-wrap">
+                <img src="team/airshade-bas-overvelde.jpg" alt="Prof. Dr. Bas Overvelde">
+              </div>
+              <div>
+                <h4><a href="https://www.linkedin.com/in/overvelde/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Prof. Dr. Bas Overvelde</a></h4>
+                <p class="role">AMOLF / TU Eindhoven</p>
+                <p class="team-bio">Harvard PhD Soft Robotics</p>
+              </div>
+            </div>
+            <div class="team-member-compact">
+              <div class="team-photo-wrap">
+                <img src="team/airshade-sergio-picella.jpg" alt="Dr. Sergio Picella">
+              </div>
+              <div>
+                <h4><a href="https://www.linkedin.com/in/sergio-picella-26793a17a/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Dr. Sergio Picella</a></h4>
+                <p class="role">EPFL Post-Doc</p>
+                <p class="team-bio">Soft Robotics Expert</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="team-column">
-          <h3>Core Team</h3>
-          <div class="team-list">
-            <div class="team-member-compact">
-              <img src="260115_Airshade_Technologies_Deck Folder/Links/Photo_Nikola_Znaor.jpg" alt="Nikola Znaor">
-              <div>
-                <h4>Nikola Znaor</h4>
-                <p class="role">Founder & CEO</p>
-              </div>
-            </div>
-            <div class="team-member-compact">
-              <img src="260115_Airshade_Technologies_Deck Folder/Links/Nikola Znaor (4).jpg" alt="Joe Platt">
-              <div>
-                <h4>Joe Platt</h4>
-                <p class="role">Lead Engineer</p>
-              </div>
-            </div>
-            <div class="team-member-compact">
-              <img src="260115_Airshade_Technologies_Deck Folder/Links/team_raf_lou.png" alt="Dr. Rafaela Louis">
-              <div>
-                <h4>Dr. Rafaela Louis</h4>
-                <p class="role">Mechanical Engineer</p>
-              </div>
-            </div>
+        <div class="partners-column">
+          <h3>Industry Partners</h3>
+          <div class="partner-logos">
+            <a href="https://www.arup.com" target="_blank" rel="noopener"><img src="logos/airshade-partner-arup.png" alt="ARUP"></a>
+            <a href="https://www.metadecor.nl" target="_blank" rel="noopener"><img src="logos/airshade-partner-materialdistrict.png" alt="Metadecor"></a>
+          </div>
+
+          <h3 style="margin-top: 50px;">Academic Partners</h3>
+          <div class="partner-logos">
+            <a href="https://amolf.nl" target="_blank" rel="noopener"><img src="logos/airshade-partner-amolf.png" alt="AMOLF"></a>
+            <a href="https://www.tue.nl" target="_blank" rel="noopener"><img src="logos/airshade-partner-tue.png" alt="TU Eindhoven"></a>
           </div>
         </div>
       </div>
@@ -2175,8 +2891,63 @@
       <!-- Awards & Recognition -->
       <div class="awards-section">
         <h3>Awards & Recognition</h3>
-        <div class="awards-banner">
-          <img src="LOGOS/AWARD LOGOS/awards_white.png" alt="Awards - Holcim, James Dyson, Archello, CIBSE, ARUP, EU SME, and more">
+        <div class="awards-logos-grid">
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-holcim.png" alt="Holcim Awards" style="height: 70px;">
+            <span class="award-logo-label">Holcim Awards<br>2014</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-jamesdyson.png" alt="James Dyson Award" style="height: 55px;">
+            <span class="award-logo-label">James Dyson Award<br>2016</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-archello.png" alt="Archello Awards 2025">
+            <span class="award-logo-label">Archello Awards<br>2025</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-cobouw.png" alt="Cobouw Awards">
+            <span class="award-logo-label">Cobouw Awards<br>2024</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-cibse.png" alt="CIBSE">
+            <span class="award-logo-label">CIBSE Award<br>2024</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-adream.png" alt="A.Dream 2012">
+            <span class="award-logo-label">A.Dream<br>2012</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-ecc.png" alt="ECC">
+            <span class="award-logo-label">ECC Shortlist<br>2025</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-aws.png" alt="AWS">
+            <span class="award-logo-label">AWS Selection<br>2022</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-bks.png" alt="BKS">
+            <span class="award-logo-label">BKS Grant<br>2018</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-eu.png" alt="EU SME">
+            <span class="award-logo-label">EU SME Phase 1<br>2018</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-zak.png" alt="Zak World of Facades">
+            <span class="award-logo-label">Zak World of Facades<br>2024</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-leaseplan.png" alt="LeasePlan">
+            <span class="award-logo-label">LeasePlan Finalist<br>2022</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-rvo.png" alt="RVO">
+            <span class="award-logo-label">RVO Grant<br>2023</span>
+          </div>
+          <div class="award-logo-item">
+            <img src="logos/airshade-award-arup.png" alt="ARUP" style="height: 35px; margin-bottom: 25px;">
+            <span class="award-logo-label">Future of Facades<br>Runner Up 2023</span>
+          </div>
         </div>
       </div>
     </div>
@@ -2186,30 +2957,7 @@
       <span class="featured-label-yellow">Featured in</span>
       <div class="press-banner-yellow">
         <div class="press-banner-track-yellow">
-          <span class="press-item-yellow">ArchDaily</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">Dezeen</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">designboom</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">DETAIL</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">Azure Magazine</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">Frame Magazine</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">ArchDaily</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">Dezeen</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">designboom</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">DETAIL</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">Azure Magazine</span>
-          <span class="press-divider-yellow">•</span>
-          <span class="press-item-yellow">Frame Magazine</span>
-          <span class="press-divider-yellow">•</span>
+          <span class="press-item-yellow">ArchDaily</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">DETAIL Magazine</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Parametric Architecture</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Metalocus</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">MaterialDistrict</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">designboom</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Green Prophet</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Dezeen</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">ArchDaily</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">DETAIL Magazine</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Parametric Architecture</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Metalocus</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">MaterialDistrict</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">designboom</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Green Prophet</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Dezeen</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">ArchDaily</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">DETAIL Magazine</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Parametric Architecture</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Metalocus</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">MaterialDistrict</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">designboom</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Green Prophet</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Dezeen</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">ArchDaily</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">DETAIL Magazine</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Parametric Architecture</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Metalocus</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">MaterialDistrict</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">designboom</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Green Prophet</span><span class="press-divider-yellow">•</span><span class="press-item-yellow">Dezeen</span><span class="press-divider-yellow">•</span>
         </div>
       </div>
     </div>
@@ -2219,6 +2967,7 @@
   <section class="section cta" id="contact">
     <div class="section-content">
       <h2 class="section-title">Get in Touch</h2>
+      <p style="font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 20px;">Interested in using Airshade or investing? Reach out at <a href="#" class="email-link" data-user="contact" data-domain="airshade.eu" style="color: var(--yellow); text-decoration: none; border-bottom: 1px solid var(--yellow);"></a></p>
 
       <div class="contact-layout-new">
         <!-- Left: Send Us a Message -->
@@ -2265,7 +3014,7 @@
       <div class="footer-main">
         <div class="footer-brand">
           <a href="#" class="logo">
-            <img src="LOGOS/260123_Airshade_logo_white_short.svg" alt="Airshade">
+            <img src="logos/airshade-logo-white.svg" alt="Airshade">
           </a>
           <p>Designed by Us, Powered by Nature.<br>
           Smart facades that respond to sunlight — no motors, no sensors, no power.</p>
@@ -2293,7 +3042,7 @@
           <div class="footer-column">
             <h4>Company</h4>
             <p>Airshade Technologies B.V.<br>Founded 2022</p>
-            <p style="margin-top: 15px;">KvK: 85789984<br>Btw: NL863743006B01<br>Bank: NL77ABNA0110486927</p>
+            <p style="margin-top: 15px;">KvK: 85789984<br>Btw: NL863743006B01</p>
           </div>
         </div>
       </div>
@@ -2338,27 +3087,29 @@
       });
     });
 
-    // Actuator Crossfade Animation with synchronized steps
+    // Actuator Animation — sequence 1,2,3,2,1,2,3...
     const actuatorImages = document.querySelectorAll('.actuator-animation img');
+    const actuatorImagesMobile = document.querySelectorAll('.actuator-animation-mobile img');
     const steps = document.querySelectorAll('.how-it-works .step');
-    let currentActuator = 0;
+    const sequence = [0, 1, 2, 1];
+    let seqIndex = 0;
+
+    function showActuatorFrame(frameIndex) {
+      actuatorImages.forEach((img, i) => {
+        img.classList.toggle('visible', i === frameIndex);
+      });
+      actuatorImagesMobile.forEach((img, i) => {
+        img.classList.toggle('visible', i === frameIndex);
+      });
+      steps.forEach((s, i) => {
+        s.classList.toggle('active', i === frameIndex);
+      });
+    }
 
     setInterval(() => {
-      // Remove current classes
-      actuatorImages[currentActuator].classList.remove('visible');
-      if (steps[currentActuator]) {
-        steps[currentActuator].classList.remove('active');
-      }
-
-      // Move to next
-      currentActuator = (currentActuator + 1) % actuatorImages.length;
-
-      // Add new classes
-      actuatorImages[currentActuator].classList.add('visible');
-      if (steps[currentActuator]) {
-        steps[currentActuator].classList.add('active');
-      }
-    }, 2500);
+      seqIndex = (seqIndex + 1) % sequence.length;
+      showActuatorFrame(sequence[seqIndex]);
+    }, 1800);
 
     // Smooth Accordion functionality for benefits with video switching
     document.querySelectorAll('.benefit-header').forEach(header => {
@@ -2367,25 +3118,50 @@
         const isActive = item.classList.contains('active');
         const imageId = item.getAttribute('data-image');
 
-        // Close all items
+        // Close all items and pause all mobile videos
         document.querySelectorAll('.benefit-item').forEach(i => {
           i.classList.remove('active');
+          const mobileVid = i.querySelector('.benefit-video-mobile');
+          if (mobileVid) mobileVid.pause();
         });
 
-        // Hide all videos and pause them
+        // Hide all desktop videos and pause them
         document.querySelectorAll('.benefits-images video').forEach(video => {
           video.classList.remove('active');
           video.pause();
+        });
+        // Hide all video label wrappers
+        document.querySelectorAll('.video-label-wrapper').forEach(lbl => {
+          lbl.classList.remove('active');
         });
 
         // Open clicked item if it wasn't active
         if (!isActive) {
           item.classList.add('active');
-          const correspondingVideo = document.querySelector(`.benefits-images [data-image="${imageId}"]`);
+          // Desktop video
+          const correspondingVideo = document.querySelector(`.benefits-images video[data-image="${imageId}"]`);
           if (correspondingVideo) {
             correspondingVideo.classList.add('active');
             correspondingVideo.currentTime = 0;
             correspondingVideo.play();
+          }
+          // Show labels if present
+          const correspondingLabels = document.querySelector(`.video-label-wrapper[data-image="${imageId}"]`);
+          if (correspondingLabels) {
+            correspondingLabels.classList.add('active');
+          }
+          // Mobile inline video
+          const mobileVideo = item.querySelector('.benefit-video-mobile');
+          if (mobileVideo) {
+            mobileVideo.currentTime = 0;
+            mobileVideo.play();
+          }
+        } else {
+          // Nothing active — fall back to first video playing
+          const firstVideo = document.querySelector('#benefitVideo1');
+          if (firstVideo) {
+            firstVideo.classList.add('active');
+            firstVideo.play();
           }
         }
       });
@@ -2395,23 +3171,26 @@
     const projectData = {
       markus: {
         images: [
-          'FOTO/Markus_Airshade1.jpg',
-          'FOTO/Markus_Airshade2.jpg',
-          'FOTO/Markus_Airshade3.jpg',
+          'videos/airshade-markus-front.mp4',
+          'foto/airshade-markus-4.jpg',
           'FOTO/Markus_Airshade4.jpg',
-          'FOTO/Markus_4.JPG'
+          'FOTO/Markus_Airshade3.jpg',
+          'FOTO/Markus_Airshade2.jpg',
+          'foto/airshade-prototype-markus.jpg',
+          'foto/airshade-product-photo.jpg'
         ],
         tag: 'Lighthouse Project',
         title: 'Markus Wines Winery',
         desc: 'The first permanent building installation of Airshade technology. Approximately 100 passive shading units protect the winery from intense Croatian summer sun while maintaining views of the surrounding vineyard landscape.',
         meta: 'Split, Croatia — ~100 units installed',
         partners: [
-          'LOGOS/WHITE/MD-Logo-DEF-zwart-1536x226_white.png'
+          'logos/airshade-partner-materialdistrict.png'
         ]
       },
       sombra: {
         images: [
-          'FOTO/MVRDV SOMBRA 3 © Federico Vespignani_vb.jpg',
+          'videos/airshade-flyover.mp4',
+          'foto/airshade-mvrdv-sombra-federico-vespignani.jpg',
           'FOTO/MVRDV SOMBRA 1 © Federico Vespignani.jpg',
           'FOTO/MVRDV SOMBRA 7 © Jaap Heemskerk.jpg',
           'FOTO/MVRDV SOMBRA 15 © Jaap Heemskerk.jpg',
@@ -2419,45 +3198,54 @@
         ],
         tag: '2025 Pavilion of the Year (Archello Awards)',
         title: 'SOMBRA Pavilion',
-        desc: 'A kinetic shading pavilion at the Venice Architecture Biennale featuring Airshade\'s passive actuator technology. The installation demonstrates how shading can respond to sunlight without any electronics or motors, creating a mesmerizing display of natural adaptation.',
+        desc: 'A kinetic shading pavilion designed by MVRDV. The installation at the Venice Architecture Biennale demonstrates how shading can respond to sunlight without any electronics or motors, creating a mesmerizing display of natural adaptation.',
         meta: 'Venice, Italy',
         partners: [
-          'LOGOS/PARTNER LOGOS/Arup_Logo_White_RGB_Centred.png',
-          'LOGOS/WHITE/MVRDV_Logo-e1744202542594_white.png',
-          'LOGOS/WHITE/MD-Logo-DEF-zwart-1536x226_white.png',
-          'LOGOS/WHITE/Van-Rossum-Raadgevend-Ingenieurs_logo_white.png',
-          'LOGOS/WHITE/Kersten-logo-liggend-e1744202923140_white.png',
-          'LOGOS/WHITE/Alumet_logo_white.png'
+          'logos/airshade-partner-arup.png',
+          'logos/WHITE/MVRDV_Logo-e1744202542594_white.png',
+          'logos/airshade-partner-materialdistrict.png',
+          'logos/WHITE/Van-Rossum-Raadgevend-Ingenieurs_logo_white.png',
+          'logos/WHITE/Kersten-logo-liggend-e1744202923140_white.png',
+          'logos/WHITE/Alumet_logo_white.png'
+        ],
+        press: [
+          { name: 'ArchDaily', url: 'https://www.archdaily.com/1029913/sombra-pavilion-mvrdv' },
+          { name: 'DETAIL', url: 'https://www.detail.de/de_en/sombra-pavillon-in-venedig-von-mvrdv' },
+          { name: 'Parametric Architecture', url: 'https://parametric-architecture.com/mvrdvs-sombra-pavilion-venice/' },
+          { name: 'METALOCUS', url: 'https://www.metalocus.es/en/news/ode-sun-sombra-pavilion-mvrdv' },
+          { name: 'Dezeen', url: 'https://www.dezeen.com/2025/05/20/venice-architecture-biennale-exhibitions-off-the-beaten-track/' }
         ]
       },
       masdar: {
         images: [
-          'FOTO/masdarcity_01.jpg',
+          'foto/airshade-masdar-city.jpg',
           'FOTO/masdarcity_02.jpg',
           'FOTO/masdarcity_03.jpeg',
           'FOTO/masdarcity_04.jpg',
-          'FOTO/Prototype for ZCBS Lab.jpg'
+          'foto/airshade-prototype-zcbs-lab.jpg'
         ],
         tag: 'Extreme Climate Testing',
         title: 'Masdar City Pilot',
         desc: 'A pilot project in partnership with ARUP to test Airshade technology under extreme desert conditions. The installation validates performance in temperatures exceeding 45°C with intense solar radiation.',
         meta: 'Abu Dhabi, UAE',
         partners: [
-          'LOGOS/PARTNER LOGOS/Arup_Logo_White_RGB_Centred.png',
-          'LOGOS/WHITE/MD-Logo-DEF-zwart-1536x226_white.png'
+          'logos/airshade-partner-arup.png',
+          'logos/airshade-partner-materialdistrict.png'
         ]
       },
       utrecht: {
         images: [
-          'FOTO/DSC_0252.jpg'
+          'foto/HU facade.png',
+          'FOTO/prototype_HU_web.jpg',
+          'foto/HU_web.JPG'
         ],
         tag: 'EU Retrofit Project',
         title: 'Hogeschool Utrecht',
         desc: 'EU SME Phase 1 grant project demonstrating how existing electric-driven facades can be replaced with Airshade\'s passive system. This retrofit showcases the potential for upgrading Europe\'s aging building stock.',
         meta: 'Netherlands — EU SME Phase 1 Grant',
         partners: [
-          'LOGOS/WHITE/Schellekens logo copy_white.png',
-          'LOGOS/WHITE/protospace_white.png'
+          'logos/WHITE/Schellekens logo copy_white.png',
+          'logos/WHITE/protospace_white.png'
         ]
       }
     };
@@ -2498,7 +3286,21 @@
       currentProjectIndex = projectKeys.indexOf(projectId);
       currentImageIndex = imageIndex;
 
-      document.getElementById('lightboxImage').src = data.images[currentImageIndex];
+      const mediaSrc = data.images[currentImageIndex];
+      const isVideo = mediaSrc.endsWith('.mp4') || mediaSrc.endsWith('.webm');
+      const lightboxImg = document.getElementById('lightboxImage');
+      const lightboxVid = document.getElementById('lightboxVideo');
+      if (isVideo) {
+        lightboxImg.style.display = 'none';
+        lightboxVid.style.display = 'block';
+        lightboxVid.src = mediaSrc;
+        lightboxVid.play();
+      } else {
+        lightboxVid.style.display = 'none';
+        lightboxVid.pause();
+        lightboxImg.style.display = 'block';
+        lightboxImg.src = mediaSrc;
+      }
       document.getElementById('lightboxTag').textContent = data.tag;
       document.getElementById('lightboxTitle').textContent = data.title;
       document.getElementById('lightboxDesc').textContent = data.desc;
@@ -2516,6 +3318,24 @@
         });
       } else {
         document.querySelector('.project-partners').style.display = 'none';
+      }
+
+      // Generate press links
+      const pressContainer = document.getElementById('projectPressLinks');
+      const pressSection = document.getElementById('projectPress');
+      pressContainer.innerHTML = '';
+      if (data.press && data.press.length > 0) {
+        pressSection.style.display = 'block';
+        data.press.forEach(item => {
+          const a = document.createElement('a');
+          a.href = item.url;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.textContent = item.name;
+          pressContainer.appendChild(a);
+        });
+      } else {
+        pressSection.style.display = 'none';
       }
 
       // Generate numbered dots
@@ -2637,6 +3457,23 @@
     }
     window.addEventListener('load', syncMapHeight);
     window.addEventListener('resize', syncMapHeight);
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
   </script>
 
 </body>
