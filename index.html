@@ -659,6 +659,8 @@
 
     .benefit-video-mobile-wrapper {
       display: none;
+      overflow: hidden;
+      border-radius: 8px;
     }
 
     /* Mobile-only actuator (hidden on desktop) */
@@ -2275,6 +2277,10 @@
         display: block;
         position: relative;
         margin-top: 15px;
+        overflow: hidden;
+        border-radius: 8px;
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+        aspect-ratio: 16/9;
       }
 
       .benefit-video-mobile-wrapper .benefit-video-mobile {
@@ -2729,8 +2735,8 @@
             </div>
             <div class="benefit-content">
               <p>No motors means no noise — perfect for office and study environments. Mechanical simplicity ensures long-lasting quiet, reliable operation without component failure.</p>
-              <div class="benefit-video-mobile-wrapper" style="overflow: hidden; border-radius: 8px;">
-                <video class="benefit-video-mobile" src="videos/airshade-inflation.mp4" muted loop playsinline style="transform: scale(1.4); object-fit: cover;"></video>
+              <div class="benefit-video-mobile-wrapper">
+                <video class="benefit-video-mobile" src="videos/airshade-inflation.mp4" muted loop playsinline style="transform: scale(2); object-fit: cover;"></video>
               </div>
             </div>
           </div>
