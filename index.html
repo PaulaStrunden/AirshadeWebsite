@@ -1973,14 +1973,20 @@
       }
 
       .actuator-animation {
-        min-height: 400px;
+        min-height: 350px;
         margin: 30px auto;
         width: 100%;
+        overflow: hidden;
       }
 
       .actuator-animation img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        max-height: 350px;
         max-width: 100%;
-        max-height: 100%;
+        object-fit: contain;
       }
 
       .how-it-works {
@@ -2011,6 +2017,7 @@
         order: -1;
         aspect-ratio: 16/9;
         max-width: 100%;
+        max-height: none;
         margin-top: 0;
       }
 
