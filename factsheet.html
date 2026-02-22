@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airshade Technologies — Fact Sheet</title>
+  <style>
+    @font-face {
+      font-family: 'DIN Next';
+      src: url('fonts/din-next-regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'DIN Next';
+      src: url('fonts/din-next-bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DIN Next';
+      src: url('fonts/din-next-black.ttf') format('truetype');
+      font-weight: 900;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DIN Next', -apple-system, sans-serif;
+      color: #0a0a0a;
+      line-height: 1.5;
+      background: #fff;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 20mm 25mm;
+      page-break-after: always;
+      position: relative;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #EBFF00;
+      margin-bottom: 25px;
+    }
+
+    .header img {
+      height: 30px;
+    }
+
+    .header-right {
+      font-size: 10px;
+      color: #666;
+      text-align: right;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Title */
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    h1 span {
+      color: #888;
+      font-weight: 400;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: flex;
+      gap: 0;
+      background: #0a0a0a;
+      color: #fff;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      overflow: hidden;
+    }
+
+    .stat {
+      flex: 1;
+      text-align: center;
+      padding: 14px 10px;
+    }
+
+    .stat + .stat {
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .stat-value {
+      font-size: 26px;
+      font-weight: 900;
+      color: #EBFF00;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    /* Sections */
+    h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #0a0a0a;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #eee;
+    }
+
+    h3 {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    p, li {
+      font-size: 11px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-bottom: 22px;
+    }
+
+    /* Two columns */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      gap: 15px;
+      margin-top: 8px;
+    }
+
+    .step {
+      flex: 1;
+      background: #f7f7f7;
+      padding: 12px;
+      border-radius: 4px;
+      border-left: 3px solid #EBFF00;
+    }
+
+    .step-num {
+      font-size: 18px;
+      font-weight: 900;
+      color: #EBFF00;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .step h3 {
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+
+    .step p {
+      font-size: 10px;
+      color: #666;
+    }
+
+    /* Benefits list */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+      margin-top: 8px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .benefit-dot {
+      width: 6px;
+      height: 6px;
+      background: #EBFF00;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .benefit p {
+      font-size: 11px;
+    }
+
+    .benefit strong {
+      color: #0a0a0a;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+      margin-top: 8px;
+    }
+
+    .project {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .project h3 {
+      font-size: 11px;
+      margin-bottom: 1px;
+    }
+
+    .project .tag {
+      font-size: 9px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project .location {
+      font-size: 10px;
+      color: #666;
+    }
+
+    /* Awards */
+    .awards-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      margin-top: 8px;
+    }
+
+    .award {
+      font-size: 10px;
+      color: #555;
+    }
+
+    .award strong {
+      color: #0a0a0a;
+    }
+
+    /* Team */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+      margin-top: 8px;
+    }
+
+    .team-member h3 {
+      font-size: 11px;
+      margin-bottom: 0;
+    }
+
+    .team-member .role {
+      font-size: 10px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .team-member p {
+      font-size: 10px;
+      color: #666;
+    }
+
+    /* Partners */
+    .partners-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 15px;
+      margin-top: 8px;
+    }
+
+    .partner {
+      font-size: 11px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    /* Contact footer */
+    .contact-bar {
+      position: absolute;
+      bottom: 20mm;
+      left: 25mm;
+      right: 25mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 2px solid #EBFF00;
+    }
+
+    .contact-bar p {
+      font-size: 10px;
+      color: #666;
+    }
+
+    .contact-bar a {
+      color: #0a0a0a;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .page-num {
+      position: absolute;
+      bottom: 15mm;
+      right: 25mm;
+      font-size: 9px;
+      color: #ccc;
+    }
+
+    /* Yellow highlight */
+    .highlight {
+      background: #EBFF00;
+      padding: 1px 4px;
+      font-weight: 700;
+      color: #0a0a0a;
+    }
+
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 15mm 20mm; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <div class="header">
+    <img src="logos/airshade-logo-black.svg" alt="Airshade" onerror="this.outerHTML='<span style=\'font-size:22px;font-weight:900;letter-spacing:0.05em;\'>AIRSHADE</span>'">
+    <div class="header-right">Fact Sheet<br>2026</div>
+  </div>
+
+  <h1>Smart Shading <span>Without Electricity</span></h1>
+  <p class="subtitle">Autonomous, kinetic solar facade shading powered by sunlight. No motors, no sensors, no power.</p>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-value">40%</div>
+      <div class="stat-label">Lower Cooling Costs</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">2</div>
+      <div class="stat-label">Patents</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">0</div>
+      <div class="stat-label">Carbon Emissions</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">0</div>
+      <div class="stat-label">Electronics</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>How It Works</h2>
+    <p>Airshade's patented actuator uses the sun's heat to expand air — creating pressure that physically moves shading panels.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Air Expands with Heat</h3>
+        <p>Sunlight heats air chambers in shading units</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Pressure Rises</h3>
+        <p>Expanding air inflates soft robotics actuator</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Shading Units Move</h3>
+        <p>Mechanical motion moves shading panels</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Key Benefits</h2>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <div class="benefit-dot"></div>
+        <p><strong>Zero Running Costs</strong> — No electricity, no cables, no ongoing energy costs</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-dot"></div>
+        <p><strong>Plug & Play</strong> — No wiring, no control systems, works for retrofits and new builds</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-dot"></div>
+        <p><strong>Modular & Scalable</strong> — From a single window to an entire building skin</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-dot"></div>
+        <p><strong>Silent & Durable</strong> — No motors, no noise, reliable long-term operation</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-dot"></div>
+        <p><strong>Future-Proof</strong> — EU EPBD compliant, designed to match facade lifecycles</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-dot"></div>
+        <p><strong>Zero Carbon</strong> — Fully passive system with no emissions during operation</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Selected Projects</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <div class="tag">Lighthouse Project</div>
+        <h3>Markus Wines Winery</h3>
+        <div class="location">Split, Croatia</div>
+      </div>
+      <div class="project">
+        <div class="tag">2025 Pavilion of the Year</div>
+        <h3>SOMBRA Pavilion — MVRDV</h3>
+        <div class="location">Venice Architecture Biennale, Italy</div>
+      </div>
+      <div class="project">
+        <div class="tag">Extreme Climate Testing</div>
+        <h3>Masdar City Pilot — ARUP</h3>
+        <div class="location">Abu Dhabi, UAE</div>
+      </div>
+      <div class="project">
+        <div class="tag">EU Retrofit Project</div>
+        <h3>Hogeschool Utrecht</h3>
+        <div class="location">Netherlands — EU SME Phase 1 Grant</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-bar">
+    <p><a href="https://airshade.eu">airshade.eu</a> &nbsp;|&nbsp; contact@airshade.eu &nbsp;|&nbsp; +31 (0) 683007880</p>
+    <p>R.J.H. Fortuynplein 4, 1019 WL Amsterdam, The Netherlands</p>
+  </div>
+  <div class="page-num">1 / 2</div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <div class="header">
+    <img src="logos/airshade-logo-black.svg" alt="Airshade" onerror="this.outerHTML='<span style=\'font-size:22px;font-weight:900;letter-spacing:0.05em;\'>AIRSHADE</span>'">
+    <div class="header-right">Fact Sheet<br>2026</div>
+  </div>
+
+  <div class="section">
+    <h2>Team</h2>
+    <div class="two-col">
+      <div>
+        <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 8px; font-weight: 700;">Core Team</p>
+        <div class="team-grid" style="grid-template-columns: 1fr;">
+          <div class="team-member">
+            <h3>Nikola Znaor</h3>
+            <div class="role">Founder & CEO</div>
+            <p>Licensed architect with 10+ years in adaptive facade design</p>
+          </div>
+          <div class="team-member">
+            <h3>Joe Platt</h3>
+            <div class="role">Lead Engineer</div>
+            <p>ex-Head of Hardware at Aectual, ex-Lead Engineer at Royal3D</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 8px; font-weight: 700;">Scientific Advisors</p>
+        <div class="team-grid" style="grid-template-columns: 1fr;">
+          <div class="team-member">
+            <h3>Prof. Dr. Bas Overvelde</h3>
+            <div class="role">AMOLF / TU Eindhoven</div>
+            <p>Harvard PhD Soft Robotics</p>
+          </div>
+          <div class="team-member">
+            <h3>Dr. Sergio Picella</h3>
+            <div class="role">EPFL Post-Doc</div>
+            <p>Soft Robotics Expert</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Awards & Recognition</h2>
+    <div class="awards-list">
+      <div class="award"><strong>Archello Awards</strong> 2025</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>ECC Shortlist</strong> 2025</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>Cobouw Awards</strong> 2024</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>CIBSE Award</strong> 2024</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>Zak World of Facades</strong> 2024</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>ARUP Future of Facades</strong> Runner Up 2023</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>RVO Grant</strong> 2023</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>AWS Selection</strong> 2022</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>LeasePlan Finalist</strong> 2022</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>EU SME Phase 1</strong> 2018</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>BKS Grant</strong> 2018</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>James Dyson Award</strong> 2016</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>Holcim Awards</strong> 2014</div>
+      <div class="award">&middot;</div>
+      <div class="award"><strong>A.Dream</strong> 2012</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Trusted By</h2>
+    <div class="partners-list">
+      <div class="partner">ARUP</div>
+      <div class="partner">MVRDV</div>
+      <div class="partner">Masdar City</div>
+      <div class="partner">Materialdistrict</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Featured In</h2>
+    <div class="awards-list">
+      <div class="award">ArchDaily</div>
+      <div class="award">&middot;</div>
+      <div class="award">Dezeen</div>
+      <div class="award">&middot;</div>
+      <div class="award">DETAIL</div>
+      <div class="award">&middot;</div>
+      <div class="award">METALOCUS</div>
+      <div class="award">&middot;</div>
+      <div class="award">Parametric Architecture</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Company</h2>
+    <div class="two-col">
+      <div>
+        <p><strong>Airshade Technologies B.V.</strong><br>
+        Founded 2022<br>
+        R.J.H. Fortuynplein 4<br>
+        1019 WL Amsterdam, The Netherlands</p>
+      </div>
+      <div>
+        <p>KvK: 85789984<br>
+        Btw: NL863743006B01<br><br>
+        <a href="https://airshade.eu" style="color: #0a0a0a; font-weight: 700;">airshade.eu</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-bar">
+    <p><a href="https://airshade.eu">airshade.eu</a> &nbsp;|&nbsp; contact@airshade.eu &nbsp;|&nbsp; +31 (0) 683007880</p>
+    <p>R.J.H. Fortuynplein 4, 1019 WL Amsterdam, The Netherlands</p>
+  </div>
+  <div class="page-num">2 / 2</div>
+</div>
+
+</body>
+</html>

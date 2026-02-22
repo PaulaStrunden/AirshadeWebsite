@@ -3016,7 +3016,7 @@
         <!-- Left: Send Us a Message -->
         <div class="contact-message-side">
           <h3 class="contact-section-title">Send Us a Message</h3>
-          <form class="contact-form-grid" id="contactForm" method="post" enctype="text/plain">
+          <form class="contact-form-grid" id="contactForm" action="https://formspree.io/f/xlgwpkwb" method="POST">
             <div class="form-fields-left">
               <input type="text" name="name" placeholder="Name" required>
               <input type="email" name="email" placeholder="Email" required>
@@ -3062,7 +3062,7 @@
           <p>Designed by Us, Powered by Nature.<br>
           Smart facades that respond to sunlight — no motors, no sensors, no power.</p>
           <div class="contact-buttons">
-            <a href="#" class="btn btn-yellow btn-large email-btn" data-user="contact" data-domain="airshade.eu" title="Email Us">
+            <a href="#" class="btn btn-yellow btn-large email-btn email-link" data-user="contact" data-domain="airshade.eu" title="Email Us">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13L2 4"/></svg>
             </a>
             <a href="https://www.linkedin.com/company/airshade/" target="_blank" class="btn btn-yellow btn-large" title="LinkedIn">
@@ -3113,11 +3113,7 @@
       link.href = 'mai' + 'lto:' + email;
     });
 
-    // Contact form email
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.action = 'mai' + 'lto:' + 'contact' + '@' + 'airshade.eu';
-    }
+    // Contact form handled by Formspree
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
